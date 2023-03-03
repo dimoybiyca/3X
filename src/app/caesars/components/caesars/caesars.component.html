@@ -1,0 +1,36 @@
+<div class="caesar">
+  <h1 class="title">Caesars cipher</h1>
+
+  <div class="caesar-inner">
+    <div class="caesar-label">Step</div>
+    <div class="caesar-label">Message</div>
+
+    <app-input
+      placeholder="Step"
+      [value]="step.toString()"
+      (value)="onStepChange($event)"
+    ></app-input>
+
+    <app-input
+      placeholder="Your message"
+      (value)="onMessageChanged($event)"
+      [value]="message"
+    ></app-input>
+
+    <div class="caesar-label">Cipher</div>
+    <div class="caesar-label">Result</div>
+
+    <app-slider (value)="onSliderChange($event)"></app-slider>
+
+    <div class="caesar-elem">
+      <app-output
+        [text]="result"
+        isButton="true"
+        iconName="ICON_ARROW-UP"
+        (btnClicked)="moveText($event)"
+      ></app-output>
+    </div>
+  </div>
+
+  <app-table *ngIf="message" [message]="message" [step]="step"></app-table>
+</div>
