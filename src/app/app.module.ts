@@ -7,9 +7,10 @@ import { TopBarModule } from 'src/app/shared/top-bar/top-bar.module';
 import { SideBarModule } from 'src/app/shared/side-bar/side-bar.module';
 import { HomeModule } from 'src/app/home/home.module';
 import { CaesarsModule } from 'src/app/caesars/caesars.module';
+import { TableComponent } from './caesar/components/table/table.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TableComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
