@@ -20,7 +20,10 @@
     <div class="caesar-label">Cipher</div>
     <div class="caesar-label">Result</div>
 
-    <app-slider (value)="onSliderChange($event)"></app-slider>
+    <app-slider
+      (value)="onSliderChange($event)"
+      [checked]="isCipherMode"
+    ></app-slider>
 
     <div class="caesar-elem">
       <app-output
