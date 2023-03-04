@@ -26,6 +26,7 @@ export class CaesarsComponent implements OnInit {
       this.message = value.message;
       this.step = value.step;
       this.isCipherMode = value.isCipher;
+      this.callService();
     }
   }
 

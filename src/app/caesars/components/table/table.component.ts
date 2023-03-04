@@ -13,6 +13,7 @@ import { CaesarService } from 'src/app/caesars/services/caesar.service';
   styleUrls: ['./table.component.scss'],
 })
 export class TableComponent implements OnInit, OnChanges {
+  @Input('isCipher') isCipherProps: boolean;
   @Input('message') messageProps: string;
   @Input('step') stepProps: number;
 
@@ -30,10 +31,15 @@ export class TableComponent implements OnInit, OnChanges {
   }
 
   initData(): void {
-    this.cipheredMessage = this.caesarsService.cipher(
-      this.messageProps,
-      this.stepProps
-    );
+    if (this.isCipherProps) {
+      this.cipheredMessage = this.caesarsService.cipher(
+        this.messageProps,
+        this.stepProps
+      );
+    } else {
+      this.cipheredMessage = this.messageProps;
+    }
+
     this.decipheredMessage = this.caesarsService.decipher(
       this.cipheredMessage,
       this.stepProps

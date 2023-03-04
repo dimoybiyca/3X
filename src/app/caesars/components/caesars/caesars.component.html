@@ -35,5 +35,10 @@
     </div>
   </div>
 
-  <app-table *ngIf="message" [message]="message" [step]="step"></app-table>
+  <app-table
+    *ngIf="message"
+    [message]="message"
+    [step]="step"
+    [isCipher]="isCipherMode"
+  ></app-table>
 </div>
