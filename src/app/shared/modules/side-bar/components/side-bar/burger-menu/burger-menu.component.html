@@ -1,7 +1,11 @@
-<div
-  class="burger-menu"
-  (click)="onBurgerClick()"
-  [ngClass]="{ close: isBurgerOpen }"
->
-  <span></span>
+<div class="burger-wrapper">
+  <button
+    class="burger-menu"
+    (click)="onBurgerClick()"
+    [ngClass]="{ close: isBurgerOpen }"
+    type="button"
+    aria-label="Open side menu"
+  >
+    <span></span>
+  </button>
 </div>
