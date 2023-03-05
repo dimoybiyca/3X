@@ -20,7 +20,41 @@
   text-align: right;
 }
 
+.home-person {
+  & + & {
+    margin-top: 10px;
+  }
+}
+
 .footer {
   font-size: 18px;
   text-align: center;
+}
+
+@media (max-width: 991px) {
+  .sub-title {
+    font-size: 24px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .home-person {
+    font-size: 20px;
+  }
+
+  .list-name {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 575px) {
+  .sub-title {
+    font-size: 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
 }
