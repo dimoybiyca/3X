@@ -20,6 +20,7 @@ export class CaesarService {
     return text
       .split('')
       .map((char) => char.charCodeAt(0))
+      .map((code) => code + this.alphabetSize)
       .map((code) => code - (step % this.alphabetSize))
       .map((code) => code % this.alphabetSize)
       .map((code) => String.fromCharCode(code))
