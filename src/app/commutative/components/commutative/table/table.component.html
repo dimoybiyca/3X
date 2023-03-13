@@ -1,0 +1,29 @@
+<div class="table-wrapper">
+  <table class="table">
+    <tr class="table-row">
+      <td
+        class="table-column"
+        *ngFor="
+          let char of messageProps
+            .substring(0, messageProps.length / 2 + 1)
+            .split('')
+        "
+      >
+        {{ char }}
+      </td>
+    </tr>
+
+    <tr class="table-row">
+      <td
+        class="table-column"
+        *ngFor="
+          let char of messageProps
+            .substring(messageProps.length / 2 + 1)
+            .split('')
+        "
+      >
+        {{ char }}
+      </td>
+    </tr>
+  </table>
+</div>

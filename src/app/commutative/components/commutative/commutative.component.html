@@ -1,0 +1,47 @@
+<div class="com">
+  <h1 class="title">Commutative cipher</h1>
+
+  <div class="com-inner">
+    <div class="com-label">Message</div>
+    <div class="com-elem-full">
+      <app-input
+        placeholder="Message"
+        [value]="message"
+        (value)="onMessageChange($event)"
+      ></app-input>
+    </div>
+
+    <div class="com-label">Cipher</div>
+    <div class="com-label">Passes</div>
+
+    <div class="com-elem">
+      <app-slider
+        (value)="onModeChange($event)"
+        [checked]="isCipherMode"
+      ></app-slider>
+    </div>
+
+    <div class="com-elem">
+      <app-input
+        placeholder="Passes"
+        [value]="passes.toString()"
+        (value)="onPassesChange($event)"
+      ></app-input>
+    </div>
+
+    <div class="com-label">Result</div>
+    <div class="com-elem-full">
+      <app-output
+        [text]="result"
+        isButton="true"
+        (btnClicked)="moveText($event)"
+      ></app-output>
+    </div>
+  </div>
+
+  <app-table
+    [mode]="isCipherMode"
+    [message]="data"
+    *ngFor="let data of tables"
+  ></app-table>
+</div>
